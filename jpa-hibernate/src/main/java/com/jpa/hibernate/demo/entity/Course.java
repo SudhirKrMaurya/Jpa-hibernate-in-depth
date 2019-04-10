@@ -1,0 +1,73 @@
+package com.jpa.hibernate.demo.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Course {
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", contact="
+				+contact + "]";
+	}
+	@Id
+	@GeneratedValue
+	private Integer id;
+	private String name;
+	private String email;
+	private String address;
+	private String contact;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	
+	public Course(String name, String email, String address, String contact) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.contact = contact;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getContatct() {
+		return contact;
+	}
+
+	public void setContatct(String contatct) {
+		this.contact = contatct;
+	}
+
+	protected Course() //other class not be used
+	{
+		
+	}
+	
+	public Course(String name) {
+		this.name=name;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}
