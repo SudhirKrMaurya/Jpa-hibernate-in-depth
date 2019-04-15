@@ -1,13 +1,10 @@
  package com.jpa.hibernate.demo.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @NamedQueries(value=
