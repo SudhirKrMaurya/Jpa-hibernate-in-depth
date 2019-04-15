@@ -21,7 +21,7 @@ public class CourseRepoTest {
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	CourseRepo courseRepo;
-	@Test
+	//@Test
 	@DirtiesContext
 	public void contextLoads() {
 		logger.info("test is running");
@@ -31,13 +31,26 @@ public class CourseRepoTest {
 		assertEquals("8923496827", course.getContatct());
 		//assertNull(courseRepo.deleteById(1));
 	}
-	@Test
+	//@Test
 	@DirtiesContext
 	public void deleteTest()
 	{
 		System.err.println("delete test");
 		courseRepo.deleteById(3);
 		assertNull(courseRepo.findById(2));
+	}
+	
+	@Test
+	@DirtiesContext
+	public void playWithEntity() 
+	{
+		
+		courseRepo.playWithEntityManager();
+		{
+			
+			System.err.println("play with entity manager");
+		}
+		
 	}
 
 }
