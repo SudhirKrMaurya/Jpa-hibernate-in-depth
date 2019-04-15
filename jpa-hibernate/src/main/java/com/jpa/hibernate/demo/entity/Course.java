@@ -1,10 +1,23 @@
-package com.jpa.hibernate.demo.entity;
+ package com.jpa.hibernate.demo.entity;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
+@NamedQueries(value=
+{
+	@NamedQuery(name="query_get_all_courses",query="select c from Course c"),
+	@NamedQuery(name="query_get_courses",query="select c from Course c where name='ranjeet'")
+		}
+		)
+
+
 public class Course {
 	@Override
 	public String toString() {
@@ -18,6 +31,9 @@ public class Course {
 	private String email;
 	private String address;
 	private String contact;
+	
+	
+	
 	
 	public String getEmail() {
 		return email;
