@@ -22,7 +22,7 @@ public class JpaDemoApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		logger.info("find by id-->{}",repo.findById(1));
+		logger.info("find by id-->{}",repo.findById(3));
 		//logger.info("insert info in db-->{}",repo.insert(new Course("nitu","ranjeetneetu@gamil.com","gurugaon","8520852369")));
 		
 		//repo.deleteById(1);
