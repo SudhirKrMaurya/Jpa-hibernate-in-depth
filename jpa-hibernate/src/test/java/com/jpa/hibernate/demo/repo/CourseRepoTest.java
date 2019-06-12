@@ -21,14 +21,14 @@ public class CourseRepoTest {
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
 	@Autowired
 	CourseRepo courseRepo;
-	//@Test
+	@Test
 	@DirtiesContext
 	public void contextLoads() {
 		logger.info("test is running");
-		Course course=courseRepo.findById(1);
-		assertEquals("sudhir", course.getName());
-		assertEquals("sudhir@gmail.com", course.getEmail());
-		assertEquals("8923496827", course.getContatct());
+		Course course=courseRepo.findById(3);
+		assertEquals("ranjeet", course.getName());
+		assertEquals("ranjeet.nityanand@picsaxis.com", course.getEmail());
+		assertEquals("1234567890", course.getContatct());
 		//assertNull(courseRepo.deleteById(1));
 	}
 	//@Test

@@ -7,6 +7,12 @@ public class passport{
 	@Id
 	@GeneratedValue
 	private Integer id;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	private String passportNo;
 	public String getPassportNo() {
 		return passportNo;
@@ -14,11 +20,16 @@ public class passport{
 	public void setPassportNo(String passportNo) {
 		this.passportNo = passportNo;
 	}
+	public passport() {
+		
+	}
 	@Override
 	public String toString() {
 		return "passport [id=" + id + ", passportNo=" + passportNo + "]";
 	}
-	
+	 public passport(String passportNo) {
+		 this.passportNo=passportNo;
+	 }
 	
 
 }

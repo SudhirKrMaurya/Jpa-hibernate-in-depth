@@ -1,6 +1,7 @@
 com\jpa\hibernate\demo\entity\Student.class
 com\jpa\hibernate\demo\JpaDemoApplication.class
 com\jpa\hibernate\demo\repo\CourseRepo.class
+com\jpa\hibernate\demo\repo\StudentRepo.class
 com\jpa\hibernate\demo\entity\Rating.class
 com\jpa\hibernate\demo\entity\Course.class
 com\jpa\hibernate\demo\entity\passport.class
