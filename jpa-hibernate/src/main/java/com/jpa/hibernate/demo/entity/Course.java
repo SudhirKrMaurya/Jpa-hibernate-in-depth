@@ -1,9 +1,13 @@
 package com.jpa.hibernate.demo.entity;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries(value=
@@ -27,15 +31,12 @@ public class Course {
 	private String email;
 	private String address;
 	private String contact;
-	
-	
-	
-	
+	@OneToMany(mappedBy = "course")
+    private List<Rating> rating =new ArrayList<Rating>();
+    
 	public String getEmail() {
 		return email;
 	}
-
-	
 	public Course(String name, String email, String address, String contact) {
 		super();
 		this.name = name;
@@ -43,12 +44,9 @@ public class Course {
 		this.address = address;
 		this.contact = contact;
 	}
-
-
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
@@ -80,6 +78,15 @@ public class Course {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public List<Rating> getRating() {
+		return rating;
+	}
+	public void addRating(Rating rating) {
+		this.rating.add(rating);
+	}
+	public void removeRating(Rating rating) {
+		this.rating.remove(rating);
 	}
 
 }

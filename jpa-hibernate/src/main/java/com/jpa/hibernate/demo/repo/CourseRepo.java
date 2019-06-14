@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import com.jpa.hibernate.demo.entity.Course;
 @Repository
 @Transactional
-
 public class CourseRepo {
 	
 	@Autowired
