@@ -44,6 +44,12 @@ public class Rating{
 	public void setCourse(Course course) {
 		this.course = course;
 	}
+	
+	public Rating(int rating, String description) {
+		super();
+		this.rating = rating;
+		this.description = description;
+	}
 	@Override
 	public String toString() {
 		return "Rating [id=" + id + ", rating=" + rating + ", description=" + description + ", course=" + course + "]";
