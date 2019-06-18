@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.repo.CourseRepoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.948 sec - in com.jpa.hibernate.demo.repo.CourseRepoTest
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.366 s <<< FAILURE! - in com.jpa.hibernate.demo.repo.CourseRepoTest
+contextLoads(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.02 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.jpa.hibernate.demo.repo.CourseRepoTest.contextLoads(CourseRepoTest.java:30)
+

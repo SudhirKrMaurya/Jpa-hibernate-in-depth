@@ -4,6 +4,9 @@ package com.jpa.hibernate.demo.repo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -15,12 +18,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.jpa.hibernate.demo.JpaDemoApplication;
 import com.jpa.hibernate.demo.entity.Course;
+import com.jpa.hibernate.demo.entity.Rating;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=JpaDemoApplication.class)
 public class CourseRepoTest {
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	CourseRepo courseRepo;
+	@Autowired
+	EntityManager em;
+	
 	@Test
 	@DirtiesContext
 	public void contextLoads() {
@@ -31,7 +39,7 @@ public class CourseRepoTest {
 		assertEquals("1234567890", course.getContatct());
 		//assertNull(courseRepo.deleteById(1));
 	}
-	//@Test
+	@Test
 	@DirtiesContext
 	public void deleteTest()
 	{
@@ -52,5 +60,29 @@ public class CourseRepoTest {
 		}
 		
 	}
+	
+	  //This block is facing version problem
+	  
+	  @Test 
+	  @Transactional
+	  public void retriewreviewForCourse()
+	  { 
+		  Course course=courseRepo.findById(2);
+		 
+	  logger.info("Course review===>"+course.getRating());
+	  
+	  
+	  }
+	  @Test 
+	  @Transactional
+	  public void reviewForCourse()
+	  { 
+		 Rating review =em.find(Rating.class, 2);
+	    logger.info("rating review===>"+review);
+	  
+	  
+	  }
+	 
+	
 
 }

@@ -3,8 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -19,11 +23,7 @@ import javax.persistence.OneToMany;
 
 
 public class Course {
-	@Override
-	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", contact="
-				+contact + "]";
-	}
+	
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -31,6 +31,12 @@ public class Course {
 	private String email;
 	private String address;
 	private String contact;
+	
+	@ManyToMany
+	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="student_id")
+	,inverseJoinColumns = @JoinColumn(name="course_id"))
+	private List<Student> student=new ArrayList<>(); 
+	
 	@OneToMany(mappedBy = "course")
     private List<Rating> rating =new ArrayList<Rating>();
     
@@ -39,7 +45,7 @@ public class Course {
 	}
 	public Course(String name, String email, String address, String contact) {
 		super();
-		this.name = name;
+		this.name = name; 
 		this.email = email;
 		this.address = address;
 		this.contact = contact;
@@ -88,5 +94,17 @@ public class Course {
 	public void removeRating(Rating rating) {
 		this.rating.remove(rating);
 	}
+	public List<Student> getStudent() {
+		return student;
+	}
+	public void addStudent(Student student) {
+		this.student.add(student);
+	}
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", contact="
+				+ contact + ", rating=" + rating + "]";
+	}
+	
 
 }
