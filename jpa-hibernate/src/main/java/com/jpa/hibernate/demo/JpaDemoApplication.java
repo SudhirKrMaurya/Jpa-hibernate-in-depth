@@ -44,7 +44,7 @@ public class JpaDemoApplication implements CommandLineRunner{
 		List<Rating> rating=new  ArrayList<>();
         rating.add(new Rating(4,"good"));
         rating.add(new Rating(5,"good"));
-		repo.addHardCodedReviewForCourse(4, rating);
+		//repo.addHardCodedReviewForCourse(4, rating);
 	}
 	
 

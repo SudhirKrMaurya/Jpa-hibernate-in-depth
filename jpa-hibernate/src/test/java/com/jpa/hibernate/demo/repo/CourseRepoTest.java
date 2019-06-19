@@ -87,9 +87,9 @@ public class CourseRepoTest {
 	  @Transactional
 	  public void reviewForCourseAndStudent()
 	  { 
-		 Course course =em.find(Course.class,2);
-		    logger.info("Student ===>"+course.getStudent().get(0).getName()+" student Id=>"+course.getStudent().get(0).getId());
-	    logger.info("Student and Course Details===>"+course.getStudent().toString());
+		 Course course =em.find(Course.class,1);
+		    logger.info("Student Details===>"+course.getStudent().get(0).getName()+" student Id=>"+course.getStudent().get(0).getId());
+	    logger.info("Course Details===>"+course.getName());
 	  
 	  
 	  }

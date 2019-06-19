@@ -33,8 +33,8 @@ public class Course {
 	private String contact;
 	
 	@ManyToMany(fetch=FetchType.EAGER)
-	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="student_id")
-	,inverseJoinColumns = @JoinColumn(name="course_id"))
+	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="course_id")
+	,inverseJoinColumns = @JoinColumn(name="student_id"))
 	private List<Student> student=new ArrayList<>(); 
 	
 	@OneToMany(mappedBy = "course")

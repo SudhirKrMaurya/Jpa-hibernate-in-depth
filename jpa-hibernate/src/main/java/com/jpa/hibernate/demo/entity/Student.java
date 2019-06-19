@@ -15,7 +15,7 @@ public class Student{
 	private Integer id;
 	private String name;
 	
-	@ManyToMany(mappedBy = "student") 
+	@ManyToMany(mappedBy = "student",fetch = FetchType.EAGER) 
 	private List<Course> courses=new ArrayList<>();
 	
 	@OneToOne(fetch = FetchType.LAZY)

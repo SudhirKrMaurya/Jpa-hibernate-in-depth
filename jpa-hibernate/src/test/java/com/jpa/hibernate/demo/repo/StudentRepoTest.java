@@ -14,6 +14,7 @@ import com.jpa.hibernate.demo.repo.StudentRepo;
 
 import ch.qos.logback.classic.Logger;
 
+import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Student;
 import com.jpa.hibernate.demo.entity.passport;
 @RunWith(SpringRunner.class)
@@ -23,6 +24,7 @@ public class StudentRepoTest {
 
 @Autowired
 StudentRepo studentRepoTest;
+
 @Test
 @DirtiesContext
 	
@@ -47,8 +49,18 @@ public void functionForTransactionalVerify() {
 @Transactional
 public void getCourseAndStudent() {
 	Student student =studentRepoTest.findById(2);
-	System.err.print("Student name==>"+student.getName());
-	System.err.print("Student Course retriew==>"+student.getCourses().toString());
+	System.err.println("Student name==>"+student.getName());
+	System.err.println("Student Course retriew==>"+student.getCourses().toString());
+}
+
+@Test
+@Transactional
+public void getStudentInfo() {
+	Student student=studentRepoTest.findById(2); 
+	
+	System.err.println("Student info==>"+student.getName());
+	System.err.println("Student'course Info==>"+student.getCourses().get(0).getName());
+
 }
 
 }
