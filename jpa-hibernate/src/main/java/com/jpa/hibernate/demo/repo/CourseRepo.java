@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Rating;
 
-import ch.qos.logback.classic.Logger;
 @Repository
 @Transactional
 public class CourseRepo {

@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.repo.JpqlTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.951 s - in com.jpa.hibernate.demo.repo.JpqlTest
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 3.412 s <<< FAILURE! - in com.jpa.hibernate.demo.repo.JpqlTest
+jpqlWhere(com.jpa.hibernate.demo.repo.JpqlTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.StackOverflowError
+
+jpqlType(com.jpa.hibernate.demo.repo.JpqlTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.StackOverflowError
+
+JpqlBasic(com.jpa.hibernate.demo.repo.JpqlTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.StackOverflowError
+

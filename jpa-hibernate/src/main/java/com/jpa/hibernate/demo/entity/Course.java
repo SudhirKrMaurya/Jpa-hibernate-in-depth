@@ -32,7 +32,7 @@ public class Course {
 	private String address;
 	private String contact;
 	
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="student_id")
 	,inverseJoinColumns = @JoinColumn(name="course_id"))
 	private List<Student> student=new ArrayList<>(); 
@@ -100,11 +100,7 @@ public class Course {
 	public void addStudent(Student student) {
 		this.student.add(student);
 	}
-	@Override
-	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", contact="
-				+ contact + ", rating=" + rating + "]";
-	}
+	
 	
 
 }

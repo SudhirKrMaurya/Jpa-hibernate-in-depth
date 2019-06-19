@@ -32,6 +32,7 @@ public class CourseRepoTest {
 	@Test
 	@DirtiesContext
 	public void contextLoads() {
+		System.err.println("Test class");
 		logger.info("test is running");
 		Course course=courseRepo.findById(3);
 		assertEquals("ranjeet", course.getName());
@@ -79,6 +80,16 @@ public class CourseRepoTest {
 	  { 
 		 Rating review =em.find(Rating.class, 2);
 	    logger.info("rating review===>"+review);
+	  
+	  
+	  }
+	  @Test 
+	  @Transactional
+	  public void reviewForCourseAndStudent()
+	  { 
+		 Course course =em.find(Course.class,2);
+		    logger.info("Student ===>"+course.getStudent().get(0).getName()+" student Id=>"+course.getStudent().get(0).getId());
+	    logger.info("Student and Course Details===>"+course.getStudent().toString());
 	  
 	  
 	  }

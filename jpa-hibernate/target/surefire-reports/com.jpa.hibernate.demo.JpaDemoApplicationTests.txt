@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.JpaDemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.716 s - in com.jpa.hibernate.demo.JpaDemoApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.857 s <<< FAILURE! - in com.jpa.hibernate.demo.JpaDemoApplicationTests
+contextLoads(com.jpa.hibernate.demo.JpaDemoApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.StackOverflowError
+

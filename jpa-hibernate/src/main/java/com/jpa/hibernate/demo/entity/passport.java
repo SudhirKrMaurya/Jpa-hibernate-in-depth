@@ -23,10 +23,7 @@ public class passport{
 	public passport() {
 		
 	}
-	@Override
-	public String toString() {
-		return "passport [id=" + id + ", passportNo=" + passportNo + "]";
-	}
+	
 	 public passport(String passportNo) {
 		 this.passportNo=passportNo;
 	 }

@@ -1,3 +1,4 @@
+package com.jpa.hibernate.demo.repo;
 import static org.junit.Assert.assertEquals;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.jpa.hibernate.demo.JpaDemoApplication;
 import com.jpa.hibernate.demo.repo.StudentRepo;
+
+import ch.qos.logback.classic.Logger;
+
 import com.jpa.hibernate.demo.entity.Student;
 import com.jpa.hibernate.demo.entity.passport;
 @RunWith(SpringRunner.class)
@@ -19,16 +23,17 @@ public class StudentRepoTest {
 
 @Autowired
 StudentRepo studentRepoTest;
-//@Test
+@Test
 @DirtiesContext
-public void retriveDetailsAndPassport() {
-	Student student=studentRepoTest.findById(12);
-	System.err.println("Student Test"+student.getPassport().getPassportNo());
-	assertEquals("sudhir",student.getName());
-	assertEquals("IND0021165", student.getPassport().getPassportNo());
-	//assertEquals("18",student.getPassport().getId());
 	
-}
+	  public void retriveDetailsAndPassport() { Student
+	  student=studentRepoTest.findById(12);
+	  System.err.println("Student Test"+student.getPassport().getPassportNo());
+	  assertEquals("sudhir",student.getName()); assertEquals("IND0021165",student.getPassport().getPassportNo());
+	  //assertEquals("18",student.getPassport().getId());
+	  
+	  }
+	 
 @Test
 @Transactional
 public void functionForTransactionalVerify() {
@@ -37,8 +42,13 @@ public void functionForTransactionalVerify() {
 	passport passport=student.getPassport();
 	passport.setPassportNo("IND9211420");
 	student.setName("Ranjeet");
-	
-	
-	
 }
+@Test
+@Transactional
+public void getCourseAndStudent() {
+	Student student =studentRepoTest.findById(2);
+	System.err.print("Student name==>"+student.getName());
+	System.err.print("Student Course retriew==>"+student.getCourses().toString());
+}
+
 }

@@ -60,10 +60,7 @@ public class Student{
 	public void addCourses(Course courses) {
 		this.courses.add(courses);
 	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", passport=" + passport + "]";
-	}
+	
 	
 	
 	
