@@ -3,6 +3,7 @@
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.junit.Test;
@@ -54,7 +55,7 @@ public class JpqlTest {
 		 System.err.print("Named Query");
 		 TypedQuery<Course> course=em.createNamedQuery("query_get_course_without_student", Course.class);
 		 List<Course> courseList=course.getResultList();
-		 logger.info("Course Without Student====>>>{}"+courseList);
+		 logger.info("Course Without Student====>>>{}"+courseList.size());
 		  
 	}
 	@Test
@@ -63,7 +64,7 @@ public class JpqlTest {
 		System.err.println("At Least Two student");
 		TypedQuery<Course> leastStudent=em.createNamedQuery("at_least_two_student", Course.class);
 		List<Course> least2Student=leastStudent.getResultList();
-		logger.info("atLeast2Student===>"+least2Student);
+		logger.info("atLeast2Student===>"+least2Student.size());
 	}
 	@Test
 	public void OrderdBystudent() {
@@ -71,7 +72,7 @@ public class JpqlTest {
 		  
 		TypedQuery<Course> orderStudent=em.createNamedQuery("order_by_student", Course.class);
 		List<Course> orderedStudent=orderStudent.getResultList();
-		logger.info("atLeast2Student===>"+orderedStudent);
+		logger.info("atLeast2Student===>"+orderedStudent.size());
 
 	}
 	@Test
@@ -79,7 +80,32 @@ public class JpqlTest {
 		System.err.println("passport Pattern");
 		TypedQuery<Student> passport=em.createNamedQuery("Passport_name_with_certain_code", Student.class);
 	    List<Student> passportOrder=passport.getResultList();
-	    logger.info("passport statrt with ====>>>>>"+passportOrder);
+	    logger.info("passport statrt with ====>>>>>"+passportOrder.size());
+	}
+	@Test
+	public void join(){
+		System.err.println("join in jpql");
+		Query studentInfo=em.createQuery("Select c , s from Student c  JOIN c.courses s");//we can join using reverse entity either student or Course because both are mapped return array of array  
+		List<Object[]> studentInfoList=studentInfo.getResultList();
+		logger.info("Get student info using Join query=========>>>>>>>>>>"+studentInfoList.size());
+		for(Object[] InfoList: studentInfoList) {
+			logger.info("InfoList[0] return course array and {}InfoList[1] //return student info aaray;/n" + 
+					InfoList[0]+"/n"+InfoList[1]);
+					}
+	}
+	@Test
+	public void leftJoin() {
+		System.err.print("Left Join");
+		Query studentInfoLeftJoin=em.createQuery("Select s,c from Course c LEFT JOIN c.student s");
+		List studentInfo=studentInfoLeftJoin.getResultList();
+		logger.info("Student info using left join===>>>"+studentInfo.size());
+	}
+	@Test
+	public void crossJoin() {
+		System.err.println("crossJoin");
+		Query infoUsingCrossJoin=em.createQuery("Select s,c from Course c, Student s");
+		List studentInfo=infoUsingCrossJoin.getResultList();
+		logger.info("Student info using cross join "+studentInfo.size());
 	}
 	
 }

@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 @Entity
 @NamedQueries(value= {
-		@NamedQuery(name="Passport_name_with_certain_code",query ="Select s from Student s where s.passport.passportNo like '%IND0012%'")
+		@NamedQuery(name="Passport_name_with_certain_code",query ="Select s from Student s where s.passport.passportNo like '%IND0012%'"),
 })
 public class Student{
 	@Id
