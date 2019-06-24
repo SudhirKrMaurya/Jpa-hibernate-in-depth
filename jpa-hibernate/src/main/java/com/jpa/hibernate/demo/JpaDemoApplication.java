@@ -55,9 +55,7 @@ public class JpaDemoApplication implements CommandLineRunner{
 //        studentRepo.findStudentByName("Mr.Ranjeet Gaitondende");
 		employeeRepo.insert(new FullTimeEmployee("Gaitonde",new BigDecimal(1000)));
 		employeeRepo.insert(new PartTimeEmployee("Sonu",new BigDecimal(5000))) ;
-        List<Employee> allEmployee= employeeRepo.fetchAllEmployee();
-        System.err.println("All Employee"+allEmployee);
-	}
+       	}
 	
 
 }

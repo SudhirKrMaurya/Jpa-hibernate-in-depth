@@ -7,8 +7,13 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 @Entity
+@NamedQueries(value= {
+		@NamedQuery(name="Passport_name_with_certain_code",query ="Select s from Student s where s.passport.passportNo like '%IND0012%'")
+})
 public class Student{
 	@Id
 	@GeneratedValue
