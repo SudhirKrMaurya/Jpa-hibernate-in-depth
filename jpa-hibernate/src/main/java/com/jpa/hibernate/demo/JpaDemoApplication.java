@@ -1,5 +1,5 @@
 package com.jpa.hibernate.demo;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -9,8 +9,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.jpa.hibernate.demo.entity.Rating;
+import com.jpa.hibernate.demo.entity.Employee;
+import com.jpa.hibernate.demo.entity.FullTimeEmployee;
+import com.jpa.hibernate.demo.entity.PartTimeEmployee;
 import com.jpa.hibernate.demo.repo.CourseRepo;
+import com.jpa.hibernate.demo.repo.EmployeeRepo;
 import com.jpa.hibernate.demo.repo.ReviewRepo;
 import com.jpa.hibernate.demo.repo.StudentRepo;
 
@@ -22,6 +25,8 @@ public class JpaDemoApplication implements CommandLineRunner{
 	StudentRepo studentRepo;
 	@Autowired
 	ReviewRepo reviewrepo;
+	@Autowired
+	EmployeeRepo employeeRepo;
 	
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
 	public static void main(String[] args) {
@@ -41,10 +46,17 @@ public class JpaDemoApplication implements CommandLineRunner{
 	   // studentRepo.studentWithpassport();
 		//logger.info("rating find by id ====================-->{}",reviewrepo.reviewById(2));
 		//repo.addReviewForCourse(2);
-		List<Rating> rating=new  ArrayList<>();
-        rating.add(new Rating(4,"good"));
-        rating.add(new Rating(5,"good"));
+		/*
+		 * List<Rating> rating=new ArrayList<>(); rating.add(new Rating(4,"good"));
+		 * rating.add(new Rating(5,"good"));
+		 */
 		//repo.addHardCodedReviewForCourse(4, rating);
+        //studentRepo.insertStudentInfo();
+//        studentRepo.findStudentByName("Mr.Ranjeet Gaitondende");
+		employeeRepo.insert(new FullTimeEmployee("Gaitonde",new BigDecimal(1000)));
+		employeeRepo.insert(new PartTimeEmployee("Sonu",new BigDecimal(5000))) ;
+        List<Employee> allEmployee= employeeRepo.fetchAllEmployee();
+        System.err.println("All Employee"+allEmployee);
 	}
 	
 
