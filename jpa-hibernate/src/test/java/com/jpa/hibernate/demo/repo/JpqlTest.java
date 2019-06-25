@@ -93,7 +93,7 @@ public class JpqlTest {
 					InfoList[0]+"/n"+InfoList[1]);
 					}
 	}
-	@Test
+	@Test 
 	public void leftJoin() {
 		System.err.print("Left Join");
 		Query studentInfoLeftJoin=em.createQuery("Select s,c from Course c LEFT JOIN c.student s");

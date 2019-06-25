@@ -3,10 +3,12 @@
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.JoinColumn;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 
 import org.hibernate.Criteria;
@@ -65,6 +67,28 @@ public class CriteriaQueryTest {
 	  logger.info("course===>"+query.getResultList().size());
 
 	
+	}
+	@Test
+	public void getAllCourseWithoutStudent() {
+		//Select c from Course c where c.student is empty
+		System.err.print("get course without student");
+		CriteriaBuilder cb=em.getCriteriaBuilder();
+		CriteriaQuery<Course> cq=cb.createQuery(Course.class);
+		Root<Course> courseRoot=cq.from(Course.class);
+		cq.where(cb.isEmpty(courseRoot.get("student")));
+		TypedQuery<Course> result=em.createQuery(cq.select(courseRoot));
+		logger.info("Get All Course without Student====>>>>>"+result.getResultList().size());
+	}
+	@Test
+	public void joinCriteriaQuery() {
+		//Select c , s from Student c  JOIN c.courses s
+		System.err.println("Join Criteria Query");
+		CriteriaBuilder cb=em.getCriteriaBuilder();
+		CriteriaQuery<Course> cq=cb.createQuery(Course.class);
+		Root<Course> courseRoot=cq.from(Course.class);
+		Join<Object, Object> join=courseRoot.join("student");
+		TypedQuery<Course> joinResult=em.createQuery(cq.select(courseRoot));
+		logger.info("Join Criteria Query=======>>>>>>"+joinResult.getResultList().size());
 	}
 	/*
 	 * @Test public void jpqlType() { TypedQuery<Course>
