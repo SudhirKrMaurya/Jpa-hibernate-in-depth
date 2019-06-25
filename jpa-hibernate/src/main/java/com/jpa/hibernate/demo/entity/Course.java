@@ -20,7 +20,6 @@ import javax.persistence.OneToMany;
 	@NamedQuery(name="query_get_courses",query="select c from Course c where name='ranjeet'"),
 	@NamedQuery(name="query_get_course_without_student",query="Select c from Course c where c.student is empty"),
 	@NamedQuery(name="at_least_two_student",query="select c from Course c where size(c.student) >=1"),
-	
 	@NamedQuery(name="order_by_student",query="select c from Course c order by size(c.student) desc")
 		}
 		)
