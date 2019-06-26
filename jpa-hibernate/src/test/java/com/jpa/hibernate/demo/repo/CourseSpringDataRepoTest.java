@@ -76,7 +76,6 @@ public class CourseSpringDataRepoTest {
 		System.err.println("find by name");
 		logger.info("course find by name======>>>>>>"+courseSpringRepo.findByName("go by google").size());
 	}
-
 	/*
 	 * @Test public void deleteByName() { System.err.println("delete by name");
 	 * logger.info("Delete by Name=========>>>>>>>>"+courseSpringRepo.
