@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.JpaDemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.406 s - in com.jpa.hibernate.demo.JpaDemoApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.195 s - in com.jpa.hibernate.demo.JpaDemoApplicationTests
