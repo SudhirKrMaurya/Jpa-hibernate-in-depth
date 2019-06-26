@@ -1,4 +1,6 @@
 com\jpa\hibernate\demo\repo\CourseRepoTest.class
 com\jpa\hibernate\demo\repo\StudentRepoTest.class
+com\jpa\hibernate\demo\repo\CriteriaQueryTest.class
+com\jpa\hibernate\demo\repo\CourseSpringDataRepoTest.class
 com\jpa\hibernate\demo\JpaDemoApplicationTests.class
 com\jpa\hibernate\demo\repo\JpqlTest.class

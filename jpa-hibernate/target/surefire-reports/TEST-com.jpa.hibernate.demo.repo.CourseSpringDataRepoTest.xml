@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.jpa.hibernate.demo.repo.StudentRepoTest" time="1.478" tests="4" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="1.839" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -59,16 +59,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="functionForTransactionalVerify" classname="com.jpa.hibernate.demo.repo.StudentRepoTest" time="0.012"/>
-  <testcase name="getCourseAndStudent" classname="com.jpa.hibernate.demo.repo.StudentRepoTest" time="0.024"/>
-  <testcase name="retriveDetailsAndPassport" classname="com.jpa.hibernate.demo.repo.StudentRepoTest" time="0.002">
-    <error message="could not initialize proxy - no Session" type="org.hibernate.LazyInitializationException">org.hibernate.LazyInitializationException: could not initialize proxy - no Session
-	at com.jpa.hibernate.demo.repo.StudentRepoTest.retriveDetailsAndPassport(StudentRepoTest.java:33)
-</error>
-    <system-out><![CDATA[Hibernate: select student0_.id as id1_5_0_, student0_.name as name2_5_0_, student0_.passport_id as passport3_5_0_, courses1_.student_id as student_2_1_1_, course2_.id as course_i1_1_1_, course2_.id as id1_0_2_, course2_.address as address2_0_2_, course2_.contact as contact3_0_2_, course2_.email as email4_0_2_, course2_.name as name5_0_2_ from student student0_ left outer join course_student courses1_ on student0_.id=courses1_.student_id left outer join course course2_ on courses1_.course_id=course2_.id where student0_.id=?
-2019-06-26 17:37:37.364  INFO 11648 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1c0f32ad: startup date [Wed Jun 26 17:37:34 IST 2019]; root of context hierarchy
-2019-06-26 17:37:37.367  INFO 11648 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-]]></system-out>
-  </testcase>
-  <testcase name="getStudentInfo" classname="com.jpa.hibernate.demo.repo.StudentRepoTest" time="0.01"/>
+  <testcase name="findById_course_Present" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.028"/>
+  <testcase name="deleteByName" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.046"/>
+  <testcase name="findAll" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.167"/>
+  <testcase name="findByName" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.024"/>
+  <testcase name="sort" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0"/>
+  <testcase name="findByJpaQuery" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.007"/>
+  <testcase name="FindByNameAndId" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.002"/>
+  <testcase name="pagination" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.011"/>
+  <testcase name="findById_course_not_Present" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.002"/>
+  <testcase name="findByNativeQuery" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.005"/>
+  <testcase name="springDataOperation" classname="com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest" time="0.025"/>
 </testsuite>

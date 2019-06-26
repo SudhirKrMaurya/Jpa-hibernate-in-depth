@@ -1,46 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.repo.CourseRepoTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 6, Skipped: 0, Time elapsed: 11.703 s <<< FAILURE! - in com.jpa.hibernate.demo.repo.CourseRepoTest
-reviewForCourseAndStudent(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.777 s <<< FAILURE! - in com.jpa.hibernate.demo.repo.CourseRepoTest
+contextLoads(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.jpa.hibernate.demo.repo.CourseRepoTest.contextLoads(CourseRepoTest.java:38)
 
-playWithEntity(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
-
-retriewreviewForCourse(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
-
-reviewForCourse(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
-
-contextLoads(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
-
-deleteTest(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
+deleteTest(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.024 s  <<< ERROR!
+org.springframework.dao.InvalidDataAccessApiUsageException: attempt to create delete event with null entity; nested exception is java.lang.IllegalArgumentException: attempt to create delete event with null entity
+	at com.jpa.hibernate.demo.repo.CourseRepoTest.deleteTest(CourseRepoTest.java:48)
+Caused by: java.lang.IllegalArgumentException: attempt to create delete event with null entity
+	at com.jpa.hibernate.demo.repo.CourseRepoTest.deleteTest(CourseRepoTest.java:48)
 

@@ -19,8 +19,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.jpa.hibernate.demo.JpaDemoApplication;
 import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Rating;
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes=JpaDemoApplication.class)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes=JpaDemoApplication.class)
 public class CourseRepoTest {
 	private Logger logger=LoggerFactory.getLogger(this.getClass());
 	

@@ -1,8 +1,14 @@
+com\jpa\hibernate\demo\entity\Employee.class
 com\jpa\hibernate\demo\repo\CourseRepo.class
+com\jpa\hibernate\demo\repo\CourseSpringDataRepo.class
 com\jpa\hibernate\demo\repo\ReviewRepo.class
 com\jpa\hibernate\demo\entity\Student.class
 com\jpa\hibernate\demo\JpaDemoApplication.class
+com\jpa\hibernate\demo\entity\FullTimeEmployee.class
+com\jpa\hibernate\demo\entity\PartTimeEmployee.class
 com\jpa\hibernate\demo\repo\StudentRepo.class
 com\jpa\hibernate\demo\entity\Rating.class
 com\jpa\hibernate\demo\entity\Course.class
 com\jpa\hibernate\demo\entity\passport.class
+com\jpa\hibernate\demo\repo\EmployeeRepo.class
+com\jpa\hibernate\demo\repo\IRepository.class

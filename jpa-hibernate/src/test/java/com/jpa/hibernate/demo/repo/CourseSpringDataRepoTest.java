@@ -71,4 +71,31 @@ public class CourseSpringDataRepoTest {
 		Page<Course> nextPages=courseSpringRepo.findAll(secondpage);
 		logger.info("Second page of paginatiuon=====>>>"+nextPages.getSize());
 	}
+	@Test
+	public void findByName() {
+		System.err.println("find by name");
+		logger.info("course find by name======>>>>>>"+courseSpringRepo.findByName("go by google").size());
+	}
+
+	/*
+	 * @Test public void deleteByName() { System.err.println("delete by name");
+	 * logger.info("Delete by Name=========>>>>>>>>"+courseSpringRepo.
+	 * deleteByName("go by google updated").size()); }
+	 */
+	@Test
+	public void FindByNameAndId() {
+		System.err.print("find by name and Id");
+		logger.info("find by name and Id=====>>>>"+courseSpringRepo.findByNameAndId("Go By Google", 43).size());
+	}
+	@Test
+	public void findByJpaQuery()
+	{
+		System.err.println("find By Jpa Query");
+		logger.info("Find By JPA Query=====>>>>>"+courseSpringRepo.findByQuery().size());
+	}
+	@Test
+	public void findByNativeQuery() {
+		System.err.print("find by native Query");
+		logger.info("find by native Query====>>>>"+courseSpringRepo.findBynativeQuery().size());
+	}
 } 

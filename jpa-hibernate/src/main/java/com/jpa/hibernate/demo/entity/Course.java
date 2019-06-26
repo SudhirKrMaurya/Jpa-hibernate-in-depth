@@ -13,6 +13,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @NamedQueries(value=
 {
@@ -36,6 +38,7 @@ public class Course {
 	private String contact;
 	
 	@ManyToMany(fetch=FetchType.EAGER)
+	@JsonIgnore
 	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="course_id")
 	,inverseJoinColumns = @JoinColumn(name="student_id"))
 	private List<Student> student=new ArrayList<>(); 

@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.JpaDemoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 20.511 s <<< FAILURE! - in com.jpa.hibernate.demo.JpaDemoApplicationTests
-contextLoads(com.jpa.hibernate.demo.JpaDemoApplicationTests)  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
-Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'employe_type' in 'field list'
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.406 s - in com.jpa.hibernate.demo.JpaDemoApplicationTests
