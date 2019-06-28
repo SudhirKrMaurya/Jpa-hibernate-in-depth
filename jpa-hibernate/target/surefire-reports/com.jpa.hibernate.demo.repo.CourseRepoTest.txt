@@ -1,14 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.repo.CourseRepoTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.318 s <<< FAILURE! - in com.jpa.hibernate.demo.repo.CourseRepoTest
-contextLoads(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.018 s  <<< ERROR!
-java.lang.NullPointerException
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.811 sec <<< FAILURE! - in com.jpa.hibernate.demo.repo.CourseRepoTest
+contextLoads(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.015 sec  <<< ERROR!
+java.lang.NullPointerException: null
 	at com.jpa.hibernate.demo.repo.CourseRepoTest.contextLoads(CourseRepoTest.java:38)
-
-deleteTest(com.jpa.hibernate.demo.repo.CourseRepoTest)  Time elapsed: 0.009 s  <<< ERROR!
-org.springframework.dao.InvalidDataAccessApiUsageException: attempt to create delete event with null entity; nested exception is java.lang.IllegalArgumentException: attempt to create delete event with null entity
-	at com.jpa.hibernate.demo.repo.CourseRepoTest.deleteTest(CourseRepoTest.java:48)
-Caused by: java.lang.IllegalArgumentException: attempt to create delete event with null entity
-	at com.jpa.hibernate.demo.repo.CourseRepoTest.deleteTest(CourseRepoTest.java:48)
 

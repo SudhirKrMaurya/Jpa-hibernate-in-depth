@@ -2,6 +2,7 @@ package com.jpa.hibernate.demo.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		}
 		)
 
-
+@Cacheable 
 public class Course {
 	
 	@Id
@@ -37,7 +38,7 @@ public class Course {
 	private String address;
 	private String contact;
 	
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.LAZY)
 	@JsonIgnore
 	@JoinTable(name="course_student",joinColumns= @JoinColumn(name="course_id")
 	,inverseJoinColumns = @JoinColumn(name="student_id"))

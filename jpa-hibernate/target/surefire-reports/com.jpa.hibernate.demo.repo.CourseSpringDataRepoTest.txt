@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.319 s - in com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.36 sec - in com.jpa.hibernate.demo.repo.CourseSpringDataRepoTest

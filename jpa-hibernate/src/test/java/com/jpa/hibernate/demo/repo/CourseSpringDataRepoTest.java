@@ -3,6 +3,9 @@ package com.jpa.hibernate.demo.repo;
 
 import java.util.Optional;
 
+import javax.persistence.Query;
+
+import org.hibernate.Session;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -59,8 +62,10 @@ public class CourseSpringDataRepoTest {
 	public void sort() {
 		Sort sort=new Sort(Sort.Direction.DESC,"name");
 		logger.info("sort all course name in desending order==========>>>>"+sort);
-		
-	}
+		/*
+		 * int value=-5; System.err.println("value==="+value);
+		 */
+ 	}
 	
 	@Test
 	public void pagination() {
@@ -70,6 +75,7 @@ public class CourseSpringDataRepoTest {
 		Pageable secondpage=firstPage.nextPageable();
 		Page<Course> nextPages=courseSpringRepo.findAll(secondpage);
 		logger.info("Second page of paginatiuon=====>>>"+nextPages.getSize());
+		
 	}
 	@Test
 	public void findByName() {

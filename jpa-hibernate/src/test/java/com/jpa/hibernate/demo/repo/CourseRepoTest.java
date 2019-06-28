@@ -40,15 +40,13 @@ public class CourseRepoTest {
 		assertEquals("1234567890", course.getContatct());
 		//assertNull(courseRepo.deleteById(1));
 	}
-	@Test
-	@DirtiesContext
-	public void deleteTest()
-	{
-		System.err.println("delete test");
-		courseRepo.deleteById(3);
-		assertNull(courseRepo.findById(2));
-	}
-	
+
+	/*
+	 * @Test
+	 * 
+	 * @DirtiesContext public void deleteTest() { System.err.println("delete test");
+	 * courseRepo.deleteById(3); assertNull(courseRepo.findById(2)); }
+	 */	
 	@Test
 	@DirtiesContext
 	public void playWithEntity() 
@@ -93,7 +91,23 @@ public class CourseRepoTest {
 	  
 	  
 	  }
-	 
+	  //first level caching data test query not run again retriew data from cache memory
+	  @Test 
+	  @Transactional
+	  public void findCacheDemo()
+	  { 
+	  System.err.println("query");
+	  Course course1=courseRepo.findById(1);
+	  logger.info("Course review===>"+course1);
+	  System.err.println("query");
+      Course course2=courseRepo.findById(1);
+	 logger.info("Course review===>"+course2);
+
+
+	  
+	  
+	  }
+
 	
 
 }

@@ -20,6 +20,7 @@ public class StudentRepo {
 	
 	public Student findById(int id) {
 		return em.find(Student.class,id);
+		
 	}
 	
 	public void deleteById(int id) {

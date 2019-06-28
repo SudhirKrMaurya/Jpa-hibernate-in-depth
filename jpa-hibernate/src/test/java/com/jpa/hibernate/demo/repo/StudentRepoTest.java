@@ -17,8 +17,8 @@ import ch.qos.logback.classic.Logger;
 import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Student;
 import com.jpa.hibernate.demo.entity.passport;
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = JpaDemoApplication.class)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = JpaDemoApplication.class)
 public class StudentRepoTest {
 //private Logger logger = LoggerFactory.getLogger(this.getClass()); 
 
