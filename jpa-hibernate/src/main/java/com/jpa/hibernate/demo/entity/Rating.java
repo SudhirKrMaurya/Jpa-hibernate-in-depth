@@ -1,5 +1,6 @@
 package com.jpa.hibernate.demo.entity;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -11,7 +12,20 @@ public class Rating{
 	@Id
 	@GeneratedValue
 	private Integer id;
-	private int rating;
+	@Enumerated
+	private Review rating;
+	/**
+	 * @return the rating
+	 */
+	public Review getRating() {
+		return rating;
+	}
+	/**
+	 * @param rating the rating to set
+	 */
+	public void setRating(Review rating) {
+		this.rating = rating;
+	}
 	private String description;
 	 
 	@ManyToOne            // many to one relation b/w course and rating
@@ -25,12 +39,7 @@ public class Rating{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public int getRating() {
-		return rating;
-	}
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -45,7 +54,7 @@ public class Rating{
 		this.course = course;
 	}
 	
-	public Rating(int rating, String description) {
+	public Rating(Review rating, String description) {
 		super();
 		this.rating = rating;
 		this.description = description;

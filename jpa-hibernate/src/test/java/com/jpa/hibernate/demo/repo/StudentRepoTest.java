@@ -1,20 +1,17 @@
 package com.jpa.hibernate.demo.repo;
 import static org.junit.Assert.assertEquals;
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringRunner;
-import com.jpa.hibernate.demo.JpaDemoApplication;
 import com.jpa.hibernate.demo.repo.StudentRepo;
-
-import ch.qos.logback.classic.Logger;
-
-import com.jpa.hibernate.demo.entity.Course;
+import com.jpa.hibernate.demo.JpaDemoApplication;
+import com.jpa.hibernate.demo.entity.Address;
 import com.jpa.hibernate.demo.entity.Student;
 import com.jpa.hibernate.demo.entity.passport;
 //@RunWith(SpringRunner.class)
@@ -24,11 +21,25 @@ public class StudentRepoTest {
 
 @Autowired
 StudentRepo studentRepoTest;
+@Autowired
+EntityManager em;
+
+@Test
+@Transactional
+public void setStudentAddress() {
+	Student student =studentRepoTest.findById(12);
+	System.err.println("test Student=="+student);
+	//Student student= em.find(Student.class,40);
+	student.setAddress(new Address("line1", "line 2", "City"));
+	em.flush();
+	
+}
 
 @Test
 @DirtiesContext
 	
-	  public void retriveDetailsAndPassport() { Student
+	  public void retriveDetailsAndPassport() { 
+	Student
 	  student=studentRepoTest.findById(12);
 	  System.err.println("Student Test"+student.getPassport().getPassportNo());
 	  assertEquals("sudhir",student.getName()); assertEquals("IND0021165",student.getPassport().getPassportNo());

@@ -42,7 +42,7 @@ public class JpaDemoApplication implements CommandLineRunner{
 		 * repo.deleteById(1);
 		 */
 		//logger.info("find by id Student-->{}",studentRepo.findById(8));
-		//System.err.println("student-->"+studentRepo.findById(12));
+		System.err.println("student-->"+studentRepo.addStudentAddress(12));
 	   // studentRepo.studentWithpassport();
 		//logger.info("rating find by id ====================-->{}",reviewrepo.reviewById(2));
 		//repo.addReviewForCourse(2);

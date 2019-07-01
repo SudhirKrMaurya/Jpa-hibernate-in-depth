@@ -1,5 +1,6 @@
 com\jpa\hibernate\demo\entity\Employee.class
 com\jpa\hibernate\demo\repo\CourseRepo.class
+com\jpa\hibernate\demo\entity\Address.class
 com\jpa\hibernate\demo\repo\CourseSpringDataRepo.class
 com\jpa\hibernate\demo\repo\ReviewRepo.class
 com\jpa\hibernate\demo\entity\Student.class

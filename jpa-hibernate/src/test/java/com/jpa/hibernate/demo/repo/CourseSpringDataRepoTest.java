@@ -2,10 +2,6 @@ package com.jpa.hibernate.demo.repo;
 
 
 import java.util.Optional;
-
-import javax.persistence.Query;
-
-import org.hibernate.Session;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -65,6 +61,9 @@ public class CourseSpringDataRepoTest {
 		/*
 		 * int value=-5; System.err.println("value==="+value);
 		 */
+
+
+		 
  	}
 	
 	@Test

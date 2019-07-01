@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.jpa.hibernate.demo.entity.Address;
 import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Student;
 import com.jpa.hibernate.demo.entity.passport;
@@ -21,8 +22,15 @@ public class StudentRepo {
 	public Student findById(int id) {
 		return em.find(Student.class,id);
 		
+		
 	}
 	
+public Student addStudentAddress(int id) {
+	Student student=findById(id);
+	student.setAddress(new Address("line1", "line 2", "City"));
+	em.flush();
+	return student; 
+}
 	public void deleteById(int id) {
 		Student student=findById(id);
 		em.remove(student);

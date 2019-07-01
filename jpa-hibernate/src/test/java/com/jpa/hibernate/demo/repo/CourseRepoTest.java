@@ -2,8 +2,6 @@ package com.jpa.hibernate.demo.repo;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
