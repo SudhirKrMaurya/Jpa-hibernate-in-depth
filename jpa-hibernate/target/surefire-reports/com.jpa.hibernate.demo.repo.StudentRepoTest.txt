@@ -4,15 +4,15 @@ Test set: com.jpa.hibernate.demo.repo.StudentRepoTest
 Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.jpa.hibernate.demo.repo.StudentRepoTest
 functionForTransactionalVerify(com.jpa.hibernate.demo.repo.StudentRepoTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException: null
-	at com.jpa.hibernate.demo.repo.StudentRepoTest.functionForTransactionalVerify(StudentRepoTest.java:51)
+	at com.jpa.hibernate.demo.repo.StudentRepoTest.functionForTransactionalVerify(StudentRepoTest.java:53)
 
 getCourseAndStudent(com.jpa.hibernate.demo.repo.StudentRepoTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException: null
-	at com.jpa.hibernate.demo.repo.StudentRepoTest.getCourseAndStudent(StudentRepoTest.java:60)
+	at com.jpa.hibernate.demo.repo.StudentRepoTest.getCourseAndStudent(StudentRepoTest.java:62)
 
 retriveDetailsAndPassport(com.jpa.hibernate.demo.repo.StudentRepoTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException: null
-	at com.jpa.hibernate.demo.repo.StudentRepoTest.retriveDetailsAndPassport(StudentRepoTest.java:41)
+	at com.jpa.hibernate.demo.repo.StudentRepoTest.retriveDetailsAndPassport(StudentRepoTest.java:43)
 
 setStudentAddress(com.jpa.hibernate.demo.repo.StudentRepoTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException: null
@@ -20,5 +20,5 @@ java.lang.NullPointerException: null
 
 getStudentInfo(com.jpa.hibernate.demo.repo.StudentRepoTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException: null
-	at com.jpa.hibernate.demo.repo.StudentRepoTest.getStudentInfo(StudentRepoTest.java:68)
+	at com.jpa.hibernate.demo.repo.StudentRepoTest.getStudentInfo(StudentRepoTest.java:70)
 

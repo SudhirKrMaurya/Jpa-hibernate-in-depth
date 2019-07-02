@@ -5,6 +5,7 @@ com\jpa\hibernate\demo\repo\CourseSpringDataRepo.class
 com\jpa\hibernate\demo\repo\ReviewRepo.class
 com\jpa\hibernate\demo\entity\Student.class
 com\jpa\hibernate\demo\JpaDemoApplication.class
+com\jpa\hibernate\demo\entity\Review.class
 com\jpa\hibernate\demo\entity\FullTimeEmployee.class
 com\jpa\hibernate\demo\entity\PartTimeEmployee.class
 com\jpa\hibernate\demo\repo\StudentRepo.class

@@ -54,11 +54,12 @@ public class Rating{
 		this.course = course;
 	}
 	
-	public Rating(Review rating, String description) {
+	public Rating( Review rating,String description) {
 		super();
 		this.rating = rating;
 		this.description = description;
 	}
+	
 	@Override
 	public String toString() {
 		return "Rating [id=" + id + ", rating=" + rating + ", description=" + description + ", course=" + course + "]";

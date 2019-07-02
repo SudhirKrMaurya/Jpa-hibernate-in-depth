@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jpa.hibernate.demo.entity.Course;
 import com.jpa.hibernate.demo.entity.Rating;
+import com.jpa.hibernate.demo.entity.Review;
 
 @Repository
 @Transactional
@@ -67,8 +68,8 @@ public class CourseRepo {
 		System.err.println("course.getrating===>"+course.getRating());
 		
 		//2.add two review in it
-		Rating rating1=new Rating(4,"good");
-		Rating rating2=new  Rating(5,"best");
+		Rating rating1=new Rating(Review.FOUR,"good");
+		Rating rating2=new  Rating(Review.FIVE,"best");
 		
 		//3.setting the relationship
 		course.addRating(rating1);
